@@ -4,6 +4,11 @@ layout: compress
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en-US" }}">
 
+<style> 
+  h1 {
+  text-align: center;
+}
+</style>
   {% include head.html %}
 
   <body class="site">
@@ -29,12 +34,35 @@ layout: compress
     <main class="site__content">
       <section class="blog">
         <div class="container">
+          <h1> Work Projects </h1>
           <div class="post-list" itemscope="" itemtype="http://schema.org/Blog">
-
             {% for post in site.posts %}
-              {% include card.html %}
+              {% if post.categories contains "work" %}
+                {% include card.html %}
+              {% endif %}
             {% endfor %}
-
+            <!-- {% include pagination.html %} -->
+          </div>
+        </div>
+        <div class="container">
+          <h1> Personal Projects </h1>
+          <div class="post-list" itemscope="" itemtype="http://schema.org/Blog">
+            {% for post in site.posts %}
+              {% if post.categories contains "personal" %}
+                {% include card.html %}
+              {% endif %}
+            {% endfor %}
+            <!-- {% include pagination.html %} -->
+          </div>
+        </div>
+        <div class="container">
+          <h1> School Projects </h1>
+          <div class="post-list" itemscope="" itemtype="http://schema.org/Blog">
+            {% for post in site.posts %}
+              {% if post.categories contains "school" %}
+                {% include card.html %}
+              {% endif %}
+            {% endfor %}
             <!-- {% include pagination.html %} -->
           </div>
         </div>
