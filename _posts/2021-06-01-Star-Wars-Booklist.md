@@ -7,15 +7,26 @@ published: true
 summary: ""
 ---
 
-<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/uboimpDMh_Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<p align="center"><iframe src="https://www.youtube.com/embed/uboimpDMh_Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 
-I'm a massive star wars fan and around January of 2020 I started collecting star wars books in my free time but after collecting for a while it has become harder and harder to keep track of what books I had and what books I didn't have. So I decided to make a booklist for myself using C# .net and WPF using the MVVM model.
+I'm a massive Star Wars fan, and in January 2020 I started collecting Star Wars books in my free time. As my collection grew, it became harder to keep track of which books I already owned, which ones I was missing. To solve this, I decided to build my own book tracking tool using C# .NET and WPF, following the MVVM (Model-View-ViewModel) design pattern.
+
+This tool helps me organize my collection with features like filtering by series, all in one semi responsive desktop application.
+
+
 
 | ------------- | ------------- |
 | ![](../assets/img/posts/SWBooklist/Booklist%20General%20pannel.png)  | ![](../assets/img/posts/SWBooklist/Booklist%20detail%20pannel.png)  |
 
-Since I have gained more experience I have become aware that this is not the best it could be and a rework is needed on the code structure and the GUI. So I plan on improving this project and start anew in which I would set up a server with a client.
+## Future Plans for the Book Collection Tracker
 
-I'm currently still using this project as a guide on what I have and what I don't have, but this project is far from feature complete and I'm planning to do a complete overhaul of the project.
-The current version of this project is hosted on my [github](https://github.com/EnriqueBrosse/Booklist){:target="_blank"}. 
+Since gaining more experience over the years, I've realized that the original structure of the project both the codebase and the GUI could be significantly improved. With that in mind, I’m planning a complete overhaul of the project.
+
+The next version will include:
+- **Server/Client Architecture**: Setting up a server to manage and sync my collection, with a lightweight client application for interaction.
+- **Modernized UI/UX**: Rebuilding the GUI with a more intuitive and polished design.
+- **Scalability and Flexibility**: Making it easier to expand beyond just Star Wars books if needed in the future.
+
+Although the current version isn't feature complete, I still actively use it as my main tool for tracking what books I own and what I'm missing.
+You can find the current version of the project hosted on my [github](https://github.com/EnriqueBrosse/Booklist){:target="_blank"}. 
 

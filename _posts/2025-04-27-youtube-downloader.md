@@ -8,41 +8,48 @@ summary: "A python application with PyQt6 and PyTubeFix"
 ---
 # Youtube Downloader
 
-Youtube downloader is a personal project where I wanted to learn Qt and Python, as I had only used python for making 1 page scripts without classes during my work at Cyborn. I wanted a project that challenged me and would have relations to my interests although this tool is in a legal gray area, this is only for personal use. I only download when the products are not officially available for purchase. 
+This is a personal project I built to explore and learn Python and Qt beyond simple scripting. While developing this tool, my focus was on deepening my understanding of class-based design, GUI development, and integrating third-party libraries in Python.
 
-
-Within this project most of the heavy lifting for parsing and downloading from Youtube is done by a 3rd party library called [pytubefix](https://github.com/JuanBindez/pytubefix){:target="_blank"}. The other software that I used to make this program is [ffmpeg](https://www.ffmpeg.org/){:target="_blank"} as it's the technology that I used to recombine the audio, video and subtitle files into 1 mp4. 
+> Note: This tool is strictly for **personal use**. I only download content that is not officially available for purchase, and I recognize that this project exists in a legal gray area.
 
 ![](../assets/img/posts/Youtube%20Downloader/Youtube%20Downloader.png)
 
+## Key Technologies & Libraries:
+Python (with classes and structure)
+- Qt for GUI (via PyQt6)
+- [pytubefix](https://github.com/JuanBindez/pytubefix){:target="_blank"}: for handling YouTube parsing and downloads
+- [ffmpeg](https://www.ffmpeg.org/){:target="_blank"}:  to combine audio, video, and subtitle streams into a single .mp4 file
 
 ## Features
+The YouTube Downloader application offers several user-friendly features designed to enhance the download experience:
 
-My youtube downloader application has the following features:
+- Global Settings: Customize default download preferences, such as audio-only downloads and enabling captions.
+- Multi-language Support: Download audio and captions in multiple languages for a more versatile media experience.
+- Audio-Only Mode: Download audio as a .wav file instead of the standard .mp4 format, ideal for music or podcast downloads.
+- Queueing System: Add multiple videos to a download queue, with customizable delays, perfect for downloading content overnight without needing to monitor the process.
+- Playlist Support: Automatically recognize and add entire playlists to the video tab, simplifying the process for batch downloads.
 
-- Global settings where you can default what you want to download (audio only/allowing captions etc)
-- It allows downloading multiple languages for audio and the captions
-- It has an option to only download the audio and it will output a .wav file instead of an .mp4
-- It has a queueing system with delays if you wanted to download multiple video's overnight
-- It'll also recognize playlists and automatically add all of them in the video tab 
+This tool was designed with ease of use and flexibility in mind, allowing users to tailor their experience to their specific needs.
 
+## What I Learned
 
-## What I learned making this project
+This project allowed me to dive into several key aspects of software development, including both technical skills and best practices:
 
-In this project I learned the following: 
-- The basics of Qt with PyQt6
-- Qt threadpools with using runnables  
-- Making classes in python with using private (self.__somePrivateVariable) and protected variables (self._SomeProtectedVariable) 
-- Defining variables with types (which was one of the things I most dislike about non-typed languages)
-- Debugging python library code to fix pytubefix and add new features to it in visual studio 
-- Making a merge request from a forked repository in github 
+- **Qt with PyQt6**: Gained a basic understanding of Qt and PyQt6 for building GUIs, enhancing my knowledge of cross-platform application development.
+- **Qt Thread Pools & Runnables**: Learned how to use thread pools and runnables to perform tasks concurrently in Qt, improving the efficiency of background tasks like downloading and processing videos.
+- **Python Classes & Object-Oriented Programming**: Strengthened my skills in object-oriented design by using private and protected variables (e.g., self.__somePrivateVariable, self._SomeProtectedVariable) to encapsulate data and enhance code structure.
+- **Type Hinting in Python**: Although I initially disliked dynamic typing, I embraced type hinting (variable: type) to make my code more readable and maintainable, improving overall development workflow.
+- **Debugging and Extending Libraries**: Worked on debugging and enhancing the pytubefix library in Visual Studio, learning how to contribute to open-source projects and fix issues in third-party code.
+- **GitHub & Merge Requests**: Familiarized myself with GitHub workflows, particularly creating merge requests from a forked repository, collaborating with the open-source community, and integrating updates into my own project.
+
 
 
 ## Reflection
+This project is a bit controversial, as it falls into a legal gray area, and I do not recommend others use it (especially since I've seen individuals getting banned for misusing pytubefix). That said, it was a highly educational experience for me. I gained a deeper understanding of Python and became used to using Qt for building GUI applications. Additionally, I took on the side challenge of adding support for regionalized languages in pytubefix, which expanded the tool’s capabilities.
 
-This is a bit of a controversial project as this is a bit in a gray area legal wise and I don't recommend you use it (as i've seen people getting banned for abusing pytubefix) but it was very educational to me as I did learn a few more skills (a better understanding of python and using Qt) and added support for regionalized languages on pytubefix as a side quest. 
+One of the toughest challenges I faced in this project was implementing the queue system. I wanted users to be able to remove items from the queue while it was still running, which caused a major concern: modifying the queue during iteration. Since I was running through a for loop, directly removing items could cause issues, such as skipping items or triggering an "array out of bounds" error.
 
-The hardest part for me in this entire project was how to handle the queue, as I wanted the user to be able to remove items from the queue while it was running. This is because I'm running through a for loop and would have given certain issues if you removed items from the array if they're lower or equal to the current index. That would skip an item from the array or give an array out of bounce issue. I did manage to make sure that the problem would never arise by having callbacks only when we're removing an item where it's index is bigger then the current index.
+To address this, I implemented a solution where callbacks are only triggered when removing an item with an index greater than the current one being processed, ensuring that the integrity of the loop was preserved and preventing any errors from occurring.
 
 ```python 
     def _RemoveSelectedItem(self): 

@@ -16,8 +16,12 @@ In Soul Mode you play as the soul version of yourself, not only having access to
 <p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/us-wrjvyLB4" frameborder="0" 
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 
-This was a school project for the 3rd year of [Digital Arts and Entertainment](https://www.digitalartsandentertainment.be/){:target="_blank"} for the course group projects. 
-This project also got shortlisted for the [Grads In Games Student Game (Group) Award 2022](https://gradsingames.com/news/grads-in-games-awards-2022-the-shortlist/){:target="_blank"}.
+
+Group Project – 3rd Year, [Digital Arts and Entertainment](https://www.digitalartsandentertainment.be/){:target="_blank"}
+Shortlisted for the [Grads In Games – Student Game (Group) Award 2022](https://gradsingames.com/news/grads-in-games-awards-2022-the-shortlist/){:target="_blank"}.
+
+Curse of the Pyramid was a third-year group project developed as part of the Digital Arts and Entertainment curriculum. The game combined exploration, puzzle-solving, and combat within a semi-randomly generated dungeon environment.
+
 
 The project was developed by: 
 - [Enrique Brossé](https://www.linkedin.com/in/enrique-brosse/){:target="_blank"} (Back-end, Tool, Optimization)
@@ -37,30 +41,50 @@ For this project I was responsible for the following features:
 
 ## The semi random dungeon generator 
 
-The dungeon that you can play is semi random, this means that the dungeon has a predefined layout with some rooms that will always be there and some rooms that can be random, for example the puzzle rooms, start room and rooms that lead up to the center would always be there for the demo, everything else would be random rooms. The rooms also had some variation per run as we could replace some assets at runtime when loading in the level to make every experience unique when you play the game. 
 
-### The layout tool 
+The dungeon in Curse of the Pyramid was designed to be semi-random. It followed a predefined structure where key rooms—such as the start room, puzzle rooms, and the path leading to the central chamber—were always present to ensure gameplay consistency. The rest of the dungeon was populated with randomized rooms, allowing each playthrough to feel unique while still supporting a controlled gameplay flow.
 
-The layout tool/ the level builder is a small tools that works as following: 
 
-We have a data asset DA_Level where we have nodes and connections, where nodes and spawners. The nodes here are all the levels with an ID, then we have the connections which will connect the rooms with the correct direction of what door could open. The spawners are per room that you clear, this would make sure that we can control how difficult a room is. 
+### Layout Tool (Level Builder)
 
+To support the **semi-random dungeon system** in Curse of the Pyramid, I developed a custom layout tool also known as the Level Builder. This tool was responsible for defining how dungeon rooms were placed and connected within the game world.
+
+#### Core Structure
+At the heart of the system is a **Data Asset** (DA_Level) containing:
+- Nodes: Represent individual level rooms, each with a unique ID.
+- Connections: Define valid directional links between rooms (e.g., a door leading east from one room connects to a west-facing door in another).
+- Spawners: Associated with each room to manage difficulty scaling and room population.
 ![](../assets/img/posts/CurseOfThePyramid/DA_Level.png)
 
+#### Level Builder Actor
 
-The level builder is the actor that will help fill in the data for DA_Level. It holds a grid that is the size of the node blocks * the rows/columns. It also holds the level data asset that we discussed before. This is the tool that will fill in all the data on where our levels will be placed and how they're connected. We do this by pressing the button on the asset called "Make Level".
+The Level Builder is an in-editor actor that visualizes and populates dungeon layouts:
 
+- It uses a configurable grid sized based on the number of nodes and their dimensions.
+- By pressing the in-editor button “Make Level”, the actor populates the layout grid using the data in DA_Level, assigning room types and establishing valid connections.
 ![](../assets/img/posts/CurseOfThePyramid/LayoutTool.png)
 
-Then we still have the node wrapper and the connection wrapper. These 2 will define what level get's spawned where and what the connection(s) are made. If we look at the image above you can see a lot of cubes, these will be the levels that spawn and what type of level could spawn. This is mostly done by the enum Room Type and level path. Whenever we change the enum value on this blueprint it'll change the blueprint color. If we a wanted a fixed room we would make the enum value for the variable "Room Type" fixed and fill in the asset name for room name 
+#### Visual Wrappers
+Two key blueprint classes enhance the layout tool's interactivity:
+
+- Node Wrapper: Represents individual room nodes. Each node uses an enum (RoomType) to define whether it’s a fixed, random, or special room. The node changes color in-editor based on its type, and if a room is fixed, the level asset name can be manually specified.
+
+- Connection Wrapper: Visualizes directional connections between nodes using arrows. It automatically rotates based on the Orientation enum (e.g., N, NE, E, etc.) to match room connectivity.
 
 ![](../assets/img/posts/CurseOfThePyramid/NodeWrapper.png)
 
-The connection wrapper an an actor that will visualize the connection (arrows). This blueprint will also rotate by itself if you change the enum variable Orientation with options: (N,NE,E,SE,S, etc.). 
+This tool allowed our designers to efficiently build controlled, replayable dungeon layouts while still supporting randomized elements and gameplay variety.
+
+
 
 ## The puzzles 
 
-I was also responsible for implementing the puzzles that were designed by [Steven](https://www.linkedin.com/in/stevenserramock/){:target="_blank"}. Here are some video's on how to complete the puzzles. 
+I was responsible for implementing the in-game puzzles designed by [Steven](https://www.linkedin.com/in/stevenserramock/){:target="_blank"}. These puzzles were key gameplay elements in Curse of the Pyramid, contributing to both the challenge and the narrative pacing of the game.
+
+Each puzzle was designed with a unique mechanic and theme, and I worked closely with the design team to translate these concepts into fully functional and bug-free gameplay systems.
+
+Below are video walkthroughs demonstrating how to complete the puzzles:
+
 <p float="left">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sUfFDAuab_E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/L6yrXnhD5nA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
