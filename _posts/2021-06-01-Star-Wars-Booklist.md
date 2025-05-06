@@ -7,7 +7,9 @@ published: true
 summary: ""
 ---
 
-<p align="center"><iframe src="https://www.youtube.com/embed/uboimpDMh_Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<div class="video-container">
+  <iframe class="responsive-iframe" src="https://www.youtube.com/embed/uboimpDMh_Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 I'm a massive Star Wars fan, and in January 2020 I started collecting Star Wars books in my free time. As my collection grew, it became harder to keep track of which books I already owned, which ones I was missing. To solve this, I decided to build my own book tracking tool using C# .NET and WPF, following the MVVM (Model-View-ViewModel) design pattern.
 

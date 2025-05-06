@@ -12,10 +12,9 @@ summary: "Game projects game"
 Curse Of The Pyramid is a single-player hack and slash, dungeon crawler, bullet hell roguelike with a unique twist: Soul Mode.
 In Soul Mode you play as the soul version of yourself, not only having access to a different ability set but also you are able to interact with special gameplay elements. As the enemies are making also use of this system, you have to make quick decisions in your fighting style to make it out of every room alive. 
 
-
-<p align="center"><iframe src="https://www.youtube.com/embed/us-wrjvyLB4" frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-
+<div class="video-container">
+  <iframe class="responsive-iframe" src="https://www.youtube.com/embed/us-wrjvyLB4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Group Project – 3rd Year, [Digital Arts and Entertainment](https://www.digitalartsandentertainment.be/){:target="_blank"}
 Shortlisted for the [Grads In Games – Student Game (Group) Award 2022](https://gradsingames.com/news/grads-in-games-awards-2022-the-shortlist/){:target="_blank"}.
@@ -86,8 +85,16 @@ Each puzzle was designed with a unique mechanic and theme, and I worked closely 
 Below are video walkthroughs demonstrating how to complete the puzzles:
 
 <p float="left">
-<iframe src="https://www.youtube.com/embed/sUfFDAuab_E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe src="https://www.youtube.com/embed/L6yrXnhD5nA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe src="https://www.youtube.com/embed/tl2wj8h22HQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe src="https://www.youtube.com/embed/rOCN6sIt-J4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="video-container">
+  <iframe class="responsive-iframe" src="https://www.youtube.com/embed/sUfFDAuab_E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="video-container">
+  <iframe class="responsive-iframe" src="https://www.youtube.com/embed/L6yrXnhD5nA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="video-container">
+  <iframe class="responsive-iframe" src="https://www.youtube.com/embed/tl2wj8h22HQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="video-container">
+  <iframe class="responsive-iframe" src="https://www.youtube.com/embed/rOCN6sIt-J4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 </p>
