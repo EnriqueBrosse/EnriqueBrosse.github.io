@@ -2,9 +2,9 @@
 title: Enrique Brossé # your site title
 author: EnriqueBrosse # You :P
 description: > # Meta description of Homepage
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Welcome to my portfolio; a collection of tools, systems, and game features I've developed primarily in Unreal Engine and C#, with a strong focus on game development tools, automation, and systems programming. My work spans professional projects, academic group games, and personal passion projects built to learn new technologies or solve specific problems.
+
+
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://enriquebrosse.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
